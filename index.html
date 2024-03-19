@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <title>KADIO</title>
+</head>
+<body>
+    <nav>
+        <a href="watch.html">
+            <div class="nav-search">
+                <input type="search" placeholder="Songs, playlist, artist..">
+            </div>
+            <div class="icon">
+                <a href="watch.html"><i class="ri-search-line" id="search"></i></a>
+            </div>
+        </a>
+    </nav>
+
+    <div class="trending">
+        <h3>Trending Now</h3>
+    </div>
+    
+    <main></main>
+    
+   <div class="suggestion">
+     <h3>Suggestion</h3>
+     </div>  
+ 
+  
+  
+  
+ 
+  
+  <div class="slide2">
+  <div class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+  <div class="suggestion-wrapper">
+  <div class="suggestion-img">
+  <img src="https://c.saavncdn.com/026/Chaleya-From-Jawan-Hindi-2023-20230814014337-500x500.jpg" alt="Hindi" id="hindi"></div>
+  <div class="suggestion-name">
+   <h3>Hindi</h3>
+  </div>
+  </div>
+      </div>
+       
+       
+       <div class="swiper-slide"> 
+         <div class="suggestion-wrapper">
+  <div class="suggestion-img">
+  <img src="" alt="" id="love-romantic"></div>
+  <div class="suggestion-name">
+   <h3>Love Romantic</h3>
+  </div>
+  </div>
+       </div>
+        <div class="swiper-slide"> 
+          <div class="suggestion-wrapper">
+  <div class="suggestion-img">
+  <img src="" alt="" id="rap"></div>
+  <div class="suggestion-name">
+   <h3>Rap</h3>
+  </div>
+  </div>
+        </div> 
+        <div class="swiper-slide"> 
+          <div class="suggestion-wrapper">
+  <div class="suggestion-img">
+  <img src="" alt="" id="1990s"></div>
+  <div class="suggestion-name">
+   <h3>1990s</h3>
+  </div>
+  </div>
+        </div>
+</div>
+  </div>
+</div>
+   </div>
+  
+    <div class="player">
+        <div class="player-details">
+            <div class="player-img">
+                <img src="" alt="">
+            </div>                
+            <div class="player-title">
+                <h3></h3><br>                        
+                <p id="channel"></p>       
+            </div>       
+        </div>
+       
+        <div class="play-music">
+            <p><i class="ri-skip-back-line" id="backward"></i></p>
+            <p><i class="ri-play-line" id="play"></i></p>
+            <p><i class="ri-skip-forward-line" id="forward"></i></p> 
+        </div>
+    </div> 
+
+    <form id="ytForm">       
+        <input type="text" id="ytId" placeholder="Enter YouTube Video ID...">              
+        <button type="submit" class="btn btn-outline-success" id="go"></button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="index.js"></script>
+  
+</body>
+</html>
