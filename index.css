@@ -24,7 +24,9 @@ nav{
  height: 10vh;
  z-index: 9;
 }
-
+.videoTitle{
+ 
+}
 
 
 nav a{
@@ -260,6 +262,7 @@ transition: all .5s ease-in-out;
  padding: 15px 10px;
  width: 55vw;
  display: flex;
+ flex-direction: column;
 }
 .player-title h3{
  color: #fff;
@@ -295,4 +298,13 @@ transition: all .5s ease-in-out;
 
 form{
  opacity: 0;
+}
+
+
+h3{
+  white-space: nowrap; /* Prevent text from wrapping */
+ overflow: hidden; /* Hide overflow text */
+ text-overflow: ellipsis;
+ color: #fff;
+ font-weight: 400;
 }

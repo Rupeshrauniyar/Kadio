@@ -1,3 +1,4 @@
+var api = "AIzaSyD1RwvdGq14O69Oq2mVYhw--HjEPdEl-Vo"
 var main = document.querySelector('main');
 var form = document.querySelector('form');
 var searchInput = document.getElementById('search');
@@ -6,7 +7,7 @@ form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the form from submitting
 
     var searchTerm = searchInput.value;
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&chart=mostPopular&regionCode=IN&key=AIzaSyBZMImT1HBeHJKBVgZBlfddcP7haZoUXAI&q=${searchTerm}`)
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&chart=mostPopular&regionCode=IN&key=${api}&q=${searchTerm}`)
         .then(res => res.json())
         .then((data) => {
             var clutter = "";

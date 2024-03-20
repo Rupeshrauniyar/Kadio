@@ -1,10 +1,11 @@
-var api = "AIzaSyD1RwvdGq14O69Oq2mVYhw--HjEPdEl-Vo";
+ var api = "AIzaSyD1RwvdGq14O69Oq2mVYhw--HjEPdEl-Vo"; 
         var ytinp = document.getElementById('ytId');
         var go = document.getElementById('go');
         var play = document.getElementById('play')
         var audio = new Audio();
+        var flag = 0
         audio.autoplay = true;
-        audio.loop = true;
+        audio.loop = false;
         var hindi = document.getElementById('hindi');
 var loveRomantic = document.getElementById('love-romantic');
 var rap = document.getElementById('rap');
@@ -66,7 +67,7 @@ var old = document.getElementById('1990s');
             var playerTitleElement = document.querySelector('.player-title h3');
             var playerChannelElement = document.querySelector('.player-title #channel');
 
-            fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&chart=mostPopular&regionCode=IN&key=${api}&q=all%20trending%20hindi%20music`)
+            fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&chart=mostPopular&regionCode=IN&key=${api}&q=all trending hindi movie songs`)
                 .then(res => res.json())
                 .then((data) => {
                     var clutter = "";
@@ -85,16 +86,17 @@ var old = document.getElementById('1990s');
                             </div>`;
                     });
                     main.innerHTML = clutter;
-var flag = 0
+
                     var details = document.querySelectorAll('.details');
                     details.forEach(detail => {
                         detail.addEventListener('click', function() {
+                        flag=1
                             var videoId = this.getAttribute('data-video');   
                             var playerImg = this.getAttribute('data-img');   
                             var playerTitle = this.getAttribute('data-title');   
                             var playerChannel = this.getAttribute('data-channel'); 
 
-                  flag=1 
+                 
                    play.classList="ri-pause-line";    
                             
                             
@@ -121,17 +123,8 @@ playerChannelElement.textContent = playerChannel;
 
 
 
-play.addEventListener('click', () => {
-    if (flag === 0) {
-        play.classList = "ri-pause-line";
-        audio.play();
-        flag = 1;
-    } else {
-        play.classList = "ri-play-line";
-        audio.pause();
-        flag = 0;
-    }
-});
+
+    
 
 
 
@@ -163,9 +156,15 @@ var swiper = new Swiper(".mySwiper2", {
 
 
 
+fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&chart=mostPopular&regionCode=IN&key=${api}&q=new latest films hindi song`)
+        .then(res => res.json())
+        .then((data) => {
+         data.items.forEach((el) => {
+          hindi.src=`${el.snippet.thumbnails.high.url}`
+        });
+        })
 
-
- fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&chart=mostPopular&regionCode=IN&key=${api}&q=latest love romantic song`)
+ fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&chart=mostPopular&regionCode=IN&key=${api}&q=new latest film love songs`)
         .then(res => res.json())
         .then((data) => {
          data.items.forEach((el) => {
@@ -173,7 +172,7 @@ var swiper = new Swiper(".mySwiper2", {
         });
         })
         
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&chart=mostPopular&regionCode=IN&key=${api}&q=rap songs`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&chart=mostPopular&regionCode=IN&key=${api}&q=new latest rap songs`)
         .then(res => res.json())
         .then((data) => {
          data.items.forEach((el) => {
@@ -191,3 +190,14 @@ var swiper = new Swiper(".mySwiper2", {
         });
         }) 
         
+play.addEventListener('click', () => {
+      if (flag === 0) {
+        play.classList = "ri-pause-line";
+        audio.play();
+        flag = 1;
+      } else {
+        play.classList = "ri-play-line";
+        audio.pause();
+        flag = 0;
+      }
+    });
