@@ -26,8 +26,20 @@
     <div class="trending">
         <h3>Trending Now</h3>
     </div>
-    
-    <main></main>
+    <div class="papa">
+    <main>
+     <div class="container" >
+                                <div class="details" data-video="${el.id.videoId}" data-img="${el.snippet.thumbnails.high.url}" data-title="${el.snippet.title}" data-channel="${el.snippet.channelTitle}">
+                                    <div class="img">
+                                        <img src="${el.snippet.thumbnails.high.url}" alt="">
+                                    </div>                
+                                    <div class="title">
+                                        <h3>${el.snippet.title}</h3><br>                        
+                      <p id="channel">${el.snippet.channelTitle}</p>
+                                    </div>
+                                </div>
+                            </div>
+    </main>
     
    <div class="suggestion">
      <h3>Suggestion</h3>
@@ -37,7 +49,7 @@
   
   
  
-  
+
   <div class="slide2">
   <div class="swiper mySwiper2">
     <div class="swiper-wrapper">
@@ -49,7 +61,12 @@
    <h3>Hindi</h3>
   </div>
   </div>
-      </div>
+   </div>
+
+      
+      
+       
+       
        
        
        <div class="swiper-slide"> 
@@ -60,7 +77,11 @@
    <h3>Love Romantic</h3>
   </div>
   </div>
-       </div>
+  </div>
+     
+       
+       
+      
         <div class="swiper-slide"> 
           <div class="suggestion-wrapper">
   <div class="suggestion-img">
@@ -69,7 +90,10 @@
    <h3>Rap</h3>
   </div>
   </div>
-        </div> 
+  </div>    
+        
+        
+        
         <div class="swiper-slide"> 
           <div class="suggestion-wrapper">
   <div class="suggestion-img">
@@ -78,51 +102,53 @@
    <h3>1990s</h3>
   </div>
   </div>
-        </div>
-</div>
   </div>
-</div>
-   </div>
-  
-  
-  <div class="player">
-   <div class="player-details">
-    <h3>Hello</h3>
-   </div>
+   </div>  
+   </div>  
   </div>
+ 
+  
+  
+ 
   
   
   
-    <div class="player">
-    
-    
-    
-    
-        <div class="player-details">
+   <div class="player">
+    <div class="player-details">
             <div class="player-img">
                 <img src="https://c.saavncdn.com/026/Chaleya-From-Jawan-Hindi-2023-20230814014337-500x500.jpg" alt="">
             </div>                
             <div class="player-title">
                 
-                <h3 id="videoTitle">Pehele bhi main karte karte chalta gaya so mujhe chalne do.</h3><br>                        
+                <h3 id="videoTitle">Pehele bhi main karte karte chalta gaya so mujhe chalne do.</h3>                        
             <div class="channel">
-             <p id="channel"></p>
+             <p id="channel">T-series</p>
             </div>  
             </div>
                             
-        </div>
+        
        
         <div class="play-music">
-            <p><i class="ri-skip-back-line" id="backward"></i></p>
+           <p><i class="ri-skip-back-line" id="backward"></i></p>
             <p><i class="ri-play-line" id="play"></i></p>
-            <p><i class="ri-skip-forward-line" id="forward"></i></p> 
+            <p><i class="ri-skip-forward-line" id="forward"></i></p>             
+           <p> <i class="ri-download-line" id="download"></i></p>
         </div>
     </div> 
 
     <form id="ytForm">       
         <input type="text" id="ytId" placeholder="Enter YouTube Video ID...">              
         <button type="submit" class="btn btn-outline-success" id="go"></button>
+        </div>
     </form>
+
+ 
+ 
+ 
+  
+  
+ </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="index.js"></script>

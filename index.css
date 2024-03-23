@@ -1,12 +1,9 @@
- @font-face {
-    font-family: neu;
-    src: url(./NHaasGroteskTXPro-55Rg.ttf);
-}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: neu;
+    font-family: gilroy;
 }
 
 body{
@@ -91,13 +88,12 @@ transform: scale(0.95);
 }
 .img{ 
  overflow: hidden;
- width:18%;
  height: 100%;
  z-index: 11;
  }
 .title{
  width: 70%;
- padding: 0 2px;
+ padding: 0 20px;
  margin-top: 5px;
  pointer-events: none;
 }
@@ -192,8 +188,11 @@ margin-left: 10px;
 .slide2{
  transition: all .5s ease-in-out;
 }
-.suggestion-wrapper:active{
- transform: scale(0.75);
+.zim{
+ transition: all .33s ease;
+}
+.zim:active{
+ transform: scale(0.97);
 }
 
       .swiper-slide:nth-child(1n) {
@@ -243,6 +242,7 @@ transition: all .5s ease-in-out;
  border-radius:10px;
  display: flex;
  flex-direction: row;
+ transition: all .06s ease;
 }
 .player-details{
  display: flex;
@@ -255,12 +255,13 @@ transition: all .5s ease-in-out;
  
 }
 .player-img{
- padding: 10px 10px;
+ padding: 10px 1vw;
 }
 
 .player-title{
- padding: 15px 10px;
- width: 55vw;
+ padding: 15px 1vw;
+ width: 40vw;
+
  display: flex;
  flex-direction: column;
 }
@@ -269,7 +270,11 @@ transition: all .5s ease-in-out;
  font-weight: 300;
 }
 
-
+#channel{
+ pointer-events: none;
+ color: #ff6a7f;
+ font-weight: 300;
+}
 
 
 .play-music{
@@ -279,21 +284,34 @@ transition: all .5s ease-in-out;
 }
 
 .play-music i{
- font-size:40px;
+ font-size:35px;
+ transition: all .55s ease-in-out;
+ font-weight: 100;
+ 
+}
+.play-music p{
+ transition: all .3s ease;
+ font-weight: 100;
+ 
 }
 .play-music p:active{
  transform: scale(0.9);
 }
 .play-music #play{
  color: #6aff8d;
+ transition: all .55s ease;
+}
+.play-music p{
+ transition: all .55s ease;
 }
 
-
+.channel #channel{
+ margin-top: 0;
+} 
 
 #backward,#forward{
  color: #fff;
 }
-
 
 
 form{
@@ -301,10 +319,30 @@ form{
 }
 
 
-h3{
+#videoTitle{
   white-space: nowrap; /* Prevent text from wrapping */
  overflow: hidden; /* Hide overflow text */
  text-overflow: ellipsis;
  color: #fff;
  font-weight: 400;
+ width: 35vw;
+
+}
+#download{
+ color: #fff;
+}
+
+.player{
+    
+    cursor: grabbing; /* Change cursor to grabbing while dragging */
+}
+
+.player-title h3,
+.channel,img {
+    user-select: none;
+}
+
+
+#playerChannel{
+ color:#ff6a7f;
 }
