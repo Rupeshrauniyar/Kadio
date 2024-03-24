@@ -13,7 +13,9 @@ var hindi = document.getElementById('hindi');
 var loveRomantic = document.getElementById('love-romantic');
 var rap = document.getElementById('rap');
 var old = document.getElementById('1990s');
-
+var searchApi = "AIzaSyAC0HkVA6U_CMp0rSGvGK_5ZFh6XMqlE5I";
+var main2 = document.querySelector('#main2');
+var form = document.querySelector('#form2');
 $(document).ready(() => {
     $('#ytForm').submit(async (event) => {
         event.preventDefault();
@@ -65,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var playerTitleElement = document.querySelector('.player-title h3');
 var playerChannelElement = document.querySelector('.player-title #channel');
 
-  fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=14&chart=mostPopular&regionCode=IN&key=${api}&q=all new trending movie songs`)
+  fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=14&chart=mostPopular&regionCode=IN&key=${api}&q=new trending movies songs`)
    
         .then(res => res.json())
         .then((data) => {
@@ -86,6 +88,10 @@ var playerChannelElement = document.querySelector('.player-title #channel');
             });
             main.innerHTML = clutter;
 
+
+
+
+       
             var details = document.querySelectorAll('.details');
             details.forEach(detail => {
                 detail.addEventListener('click', function (indx) {
@@ -149,7 +155,107 @@ var playerChannelElement = document.querySelector('.player-title #channel');
             });
         });
 
-    var swiper = new Swiper(".mySwiper2", {
+ 
+ 
+ 
+ form.addEventListener('submit', function (event) {
+    var searchInput = document.getElementById('searchInput');
+    var searchTerm = searchInput.value; // Use searchInput.value instead of search
+    
+    event.preventDefault(); 
+  
+
+    
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=40&regionCode=IN&key=${searchApi}&q=${searchTerm}`)
+
+        .then(res => res.json())
+        .then((data) => {
+            var clutter2 = "";
+            data.items.forEach((el) => {
+                clutter2 += `<div class="container" id=index>
+                        <div class="details" data-video="${el.id.videoId}" data-img="${el.snippet.thumbnails.high.url}" data-title="${el.snippet.title}" data-channel="${el.snippet.channelTitle}">
+                            <div class="img">
+                                <img src=${el.snippet.thumbnails.high.url} alt="">
+                            </div>                
+                            <div class="title">
+                                <h3>${el.snippet.title}</h3><br>                        
+                                <p id="channel">${el.snippet.channelTitle}</p>
+                            </div>
+                        </div>
+                    </div>`;
+            });            
+                       
+            main2.innerHTML = clutter2;
+ 
+ 
+  var details = document.querySelectorAll('.details');
+            details.forEach(detail => {
+                detail.addEventListener('click', function (indx) {
+                    flag = 1
+                    play.classList = "ri-pause-line";
+                    var videoId = this.getAttribute('data-video');
+                    playerImgElement.src = this.getAttribute('data-img');
+                    var playerTitle = this.getAttribute('data-title');
+     playerChannelElement.textContent = this.getAttribute('data-channel');
+
+                    let currentIndex = 0;
+
+                    function playNextSong() {
+                        if (currentIndex < details.length - 1) {
+                            currentIndex++;
+                            play.classList = "ri-pause-line";
+                            flag=1
+                        } else {
+                            currentIndex = 0;
+                        }
+                        var currentDetail = details[currentIndex];
+                        updatePlayer(currentDetail);
+                    }
+
+                  function playPreviousSong() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        play.classList = "ri-pause-line";
+        flag = 1;
+    } else {
+        currentIndex = details.length - 1; // Set currentIndex to the last index
+    }
+    var currentDetail = details[currentIndex];
+    updatePlayer(currentDetail);
+}
+
+                    function updatePlayer(currentDetail) {
+                        var videoId = currentDetail.getAttribute('data-video');
+                        var playerImg = currentDetail.getAttribute('data-img');
+                        var playerTitle = currentDetail.getAttribute('data-title');
+                        var playerChannel = currentDetail.getAttribute('data-channel');
+
+
+                        ytinp.value = videoId;
+                        go.click();
+                        audio.play();
+                        
+                        // Update player details
+                        playerImgElement.src = playerImg;
+                        playerTitleElement.textContent = playerTitle;
+                        playerChannelElement.textContent = playerChannel;
+                    }
+
+                    forward.addEventListener('click', playNextSong);
+                    backward.addEventListener('click', playPreviousSong);
+
+                    ytinp.value = videoId;
+                    go.click();
+                    audio.play();
+                });
+            });
+        });
+}) 
+ 
+ 
+ 
+ 
+    var swiper = new Swiper(".mySwiper1", {
         slidesPerView: "auto",
         spaceBetween: 30,
         pagination: {
@@ -198,53 +304,52 @@ var playerChannelElement = document.querySelector('.player-title #channel');
 
 
 
-var papa = document.querySelector('.papa');
-var player = document.querySelector('.player');
-var isDragging = false; // flag to track dragging state
-var startY; // stores the initial Y position of the mouse or touch
-var startOffsetY; // stores the initial offset of the player from the top
-var minPosition = 0; // Minimum position from the top of the page
-var maxPosition = window.innerHeight - player.offsetHeight; // Maximum position from the top of the page
 
-// Mouse event listeners
-player.addEventListener('mousedown', startDragging);
-papa.addEventListener('mousemove', dragPlayer);
-papa.addEventListener('mouseup', stopDragging);
 
-// Touch event listeners
-player.addEventListener('touchstart', startDragging);
-papa.addEventListener('touchmove', dragPlayer);
-papa.addEventListener('touchend', stopDragging);
 
-function startDragging(e) {
-    isDragging = true;
-    if (e.type === 'mousedown') {
-        startY = e.clientY;
-    } else if (e.type === 'touchstart') {
-        startY = e.touches[0].clientY;
-    }
-    startOffsetY = player.offsetTop;
-}
 
-function dragPlayer(e) {
-    if (!isDragging) return;
 
-    let newY;
-    if (e.type === 'mousemove') {
-        newY = e.clientY;
-    } else if (e.type === 'touchmove') {
-        newY = e.touches[0].clientY;
-    }
+var page1 = document.querySelector('.page1');
+var page2 = document.querySelector('.page2');
+var page1Button = document.querySelector('#page1Button');
+var page2Button = document.querySelector('#page2Button');
+var library = document.querySelector('#library')
+var buttons = document.getElementsByTagName('button')
 
-    let offsetY = newY - startY;
-    let newPosition = startOffsetY + offsetY;
 
-    // Ensure the player stays within the page boundaries
-    newPosition = Math.max(minPosition, Math.min(newPosition, maxPosition));
 
-    player.style.top = newPosition + "px";
-}
 
-function stopDragging() {
-    isDragging = false;
-}
+
+page2Button.addEventListener('click', () =>{
+page2.style.transform ="translate(0,0)"
+page2Button.classList.add('active');
+page1Button.classList.remove('active');
+library.classList.remove('active')
+});
+
+page1Button.addEventListener('click', () =>{
+page2.style.transform ="translate(100%,0)"
+page1Button.classList.add('active');
+page2Button.classList.remove('active');
+library.classList.remove('active')
+});
+
+library.addEventListener('click', () =>{
+library.classList.add('active')
+page1Button.classList.remove('active');
+page2Button.classList.remove('active');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -12,17 +12,19 @@
     <title>KADIO</title>
 </head>
 <body>
-    <nav>
-        <a href="watch.html">
+ <div class="page-cont">
+<div class="page1" id="page">
+
+<nav>
+      
             <div class="nav-search">
-                <input type="search" placeholder="Songs, playlist, artist..">
+           <a href="#page2"><input type="" placeholder="Songs, playlist, artist.."> 
             </div>
             <div class="icon">
-                <a href="watch.html"><i class="ri-search-line" id="search"></i></a>
-            </div>
-        </a>
+            <i class="ri-search-line" id="search"></i>
+            </a>
+        </div>
     </nav>
-
     <div class="trending">
         <h3>Trending Now</h3>
     </div>
@@ -50,10 +52,10 @@
   
  
 
-  <div class="slide2">
-  <div class="swiper mySwiper2">
+  <div class="slide1">
+  <div class="swiper mySwiper1">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
+      <div class="swiper-slide" id="slide1">
   <div class="suggestion-wrapper">
   <div class="suggestion-img">
   <img src="" alt="Hindi" id="hindi"></div>
@@ -69,7 +71,7 @@
        
        
        
-       <div class="swiper-slide"> 
+       <div class="swiper-slide" id="slide1"> 
          <div class="suggestion-wrapper">
   <div class="suggestion-img">
   <img src="" alt="" id="love-romantic"></div>
@@ -82,7 +84,7 @@
        
        
       
-        <div class="swiper-slide"> 
+        <div class="swiper-slide"id="slide1"> 
           <div class="suggestion-wrapper">
   <div class="suggestion-img">
   <img src="" alt="" id="rap"></div>
@@ -94,7 +96,7 @@
         
         
         
-        <div class="swiper-slide"> 
+        <div class="swiper-slide"id="slide1"> 
           <div class="suggestion-wrapper">
   <div class="suggestion-img">
   <img src="" alt="" id="1990s"></div>
@@ -104,16 +106,38 @@
   </div>
   </div>
    </div>  
-   </div>  
   </div>
- 
+  </div>
   
   
- 
+
   
   
+   
+<div class="page2" id="page" id="page2">
+
+<form id="form2">
+     <nav>
+      
+            <div class="nav-search">
+               <input id="searchInput" type="search" placeholder="Songs, playlist, artist.." > 
+            </div>
+            <div class="icon">
+                <i class="ri-search-line" id="search"></i>
+            </div>
+       
+    </nav>
+</form>
+
+  <div id="main2">
   
-   <div class="player">
+  </div>  
+</div>
+</div>
+
+
+  
+ <div class="player">
     <div class="player-details">
             <div class="player-img">
                 <img src="https://c.saavncdn.com/026/Chaleya-From-Jawan-Hindi-2023-20230814014337-500x500.jpg" alt="">
@@ -125,29 +149,41 @@
              <p id="channel">T-series</p>
             </div>  
             </div>
-                            
-        
-       
-        <div class="play-music">
+            </div>
+  <div class="play-music">
            <p><i class="ri-skip-back-line" id="backward"></i></p>
             <p><i class="ri-play-line" id="play"></i></p>
             <p><i class="ri-skip-forward-line" id="forward"></i></p>             
            <p> <i class="ri-download-line" id="download"></i></p>
         </div>
     </div> 
-
+<div class="tab-content">
+<div class="tabContainer">
+<button id="page1Button" class="active"><i class="ri-home-2-line" class="active"></i><p>Home</p></button>
+<button id="page2Button"><i class="ri-youtube-fill"></i><p>Search</p></button>
+<button id="library"><i class="ri-music-line"></i><p>Library</p></button>
+ </div>
+ 
+ </div>
     <form id="ytForm">       
         <input type="text" id="ytId" placeholder="Enter YouTube Video ID...">              
         <button type="submit" class="btn btn-outline-success" id="go"></button>
         </div>
     </form>
+    
+</div>  
 
+
+</div>
+
+
+
+     
  
  
  
   
   
- </div>
     
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

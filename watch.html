@@ -3,17 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Page title</title>
 </head>
 <body>
-   <form>
-      <input type="search" id="search">
-  </form>   
-  <main>
-  
-  </main>
-  
+  <div class="play-music">
+           <p><i class="ri-skip-back-line" id="backward"></i></p>
+            <p><i class="ri-play-line" id="play"></i></p>
+            <p><i class="ri-skip-forward-line" id="forward"></i></p>             
+           <p> <i class="ri-download-line" id="download"></i></p>
+        </div>
+    </div> 
+<div class="tab-content">
+<div class="tabContainer">
+<button id="page1Button" class="active"><i class="ri-home-2-line" class="active"></i><p>Home</p></button>
+<button id="page2Button"><i class="ri-youtube-fill"></i><p>Search</p></button>
+<button id="library"><i class="ri-music-line"></i><p>Library</p></button>
+ </div>
+ 
+ </div>
+    <form id="ytForm">       
+        <input type="text" id="ytId" placeholder="Enter YouTube Video ID...">              
+        <button type="submit" class="btn btn-outline-success" id="go"></button>
+        </div>
+    </form>
     
+</div>  
+  <div class="page2" id="page">
+  <form id="form2">
+      <div class="nav-search">
+ <input type="search" placeholder="Songs, playlist, artist.." id="search">
+   </div>
+</form>
+
+  <div id="main2">
+  
+  </div>
+  
+  <div class="player">
+    <div class="player-details">
+            <div class="player-img">
+                <img src="https://c.saavncdn.com/026/Chaleya-From-Jawan-Hindi-2023-20230814014337-500x500.jpg" alt="">
+            </div>                
+            <div class="player-title">
+                
+                <h3 id="videoTitle">Pehele bhi main karte karte chalta gaya so mujhe chalne do.</h3>                        
+            <div class="channel">
+             <p id="channel">T-series</p>
+            </div>  
+            </div>
+            </div>
+                            
+        
+       
+        
     
     <script src="watch.js"></script>
 </body>
