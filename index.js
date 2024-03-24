@@ -1,4 +1,4 @@
-var api= "AIzaSyAC0HkVA6U_CMp0rSGvGK_5ZFh6XMqlE5I";
+var api= "AIzaSyAFKbXCVMgZiCb343TIx5zR0BCIUTBQSvg";
 var ytinp = document.getElementById('ytId');
 var go = document.getElementById('go');
 var play = document.getElementById('play')
@@ -13,7 +13,7 @@ var hindi = document.getElementById('hindi');
 var loveRomantic = document.getElementById('love-romantic');
 var rap = document.getElementById('rap');
 var old = document.getElementById('1990s');
-var searchApi = "AIzaSyAC0HkVA6U_CMp0rSGvGK_5ZFh6XMqlE5I";
+var searchApi = "AIzaSyAFKbXCVMgZiCb343TIx5zR0BCIUTBQSvg";
 var main2 = document.querySelector('#main2');
 var form = document.querySelector('#form2');
 $(document).ready(() => {
