@@ -46,7 +46,7 @@ async function mp3Conversion(id) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '13c79cfbefmsh046a866802914b2p1d26e4jsnafee58a5a0f5',
+            'X-RapidAPI-Key': '1a294213demshe7c8c84771bfcf5p161394jsn733431dff3f4',
             'X-RapidAPI-Host': 'youtube-mp36.p.rapidapi.com'
         }
     };
