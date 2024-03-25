@@ -227,7 +227,7 @@ transition: all .5s ease-in-out;
 
 .player{
  position: fixed;
- bottom:60px;
+ bottom:57px;
  width: 100%;
  height: 10vh;
  background-color: #212121;
@@ -464,7 +464,7 @@ color:  #6aff8d;
 
 .player {
     position: fixed;
-    bottom: 60px; /* Position fixed to the top */
+    bottom: 55px; /* Position fixed to the top */
     left: 0;
     width: 100%;
     height: 10vh;
@@ -491,4 +491,129 @@ color:  #6aff8d;
 #search{
  color: #00eaff;
  
+}
+
+
+.playerMore{
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ z-index: 9999999;
+ background-color: #0F0D0D;
+ transform: translate(100%,0);
+
+}
+.play-music1{
+ 
+}
+
+.playerMoreImgCont{
+ width: 100%;
+ height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.playerMoreImg{
+ width: 100%;
+ height: 65vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+  border-radius: 40px;
+}
+.playerMoreImg img{
+ object-fit: cover;
+ width: 70%;
+ height: 60%;
+ border-radius: 20px;
+ 
+}
+
+
+.playerMoreTitle,.playerMoreChannel{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ text-align: center;
+}
+
+
+.timeline{
+ display: flex;
+ color: white;
+ width: 100%;
+ justify-content: space-between;
+ position: relative;
+ align-items: center;
+ padding: 0 10px;
+}
+
+
+.timeline input{
+ width: 80%;
+ color: #fff;
+}
+
+
+.play-music1{
+ padding: 40px 15px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.play-music1 i{
+ font-size:35px;
+ transition: all .55s ease-in-out;
+ font-weight: 100;
+ 
+}
+.play-music1 p{
+ transition: all .3s ease;
+ font-weight: 100;
+ 
+}
+.play-music1 p:active{
+ transform: scale(0.9);
+}
+.play-music1 #play1{
+ color:#000;
+ transition: all .55s ease;
+ background-color: #fff;
+ border-radius: 50px;
+ padding: 13px 13px;
+}
+.play-music1 p{
+ transition: all .55s ease;
+}
+
+.channel #channel{
+ margin-top: 0;
+} 
+
+#backward1,#forward1,#loop1,#download1{
+ color: #fff;
+ transition: all .33s ease;
+}
+
+
+#loop1.active{
+ color: #6aff8d;
+}
+
+#downwards1{
+ top: 0;
+ left: 0;
+ padding: 20px 20px;
+ color: #fff;
+ width: 40px;
+ height: 40px;
+ border-radius: 50px;
+ font-size: 20px;
+ background-color: #212121;
+}
+
+#downwards1:active{
+ background-color: #212121;
 }
